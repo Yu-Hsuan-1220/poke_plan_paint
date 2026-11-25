@@ -4,8 +4,11 @@ Each trial shows the input first frame with the pokes drawn as arrows, then two 
 one from the main method and one from an opponent (B0, B1, zlat; vanilla optional). Left/right is randomized.
 The participant answers:
 
-- **動作**: 哪一部影片的運動比較符合箭頭的指示？
-- **真實感**: 先不管箭頭，哪一部影片看起來比較像真實拍攝的影片？
+- **動作** (motion): 哪一部影片的運動比較符合箭頭的指示？ (Which video's motion better follows the arrows?)
+- **真實感** (realism): 先不管箭頭，哪一部影片看起來比較像真實拍攝的影片？ (Ignoring the arrows, which video looks more
+  like real footage?)
+
+The site itself is in Traditional Chinese.
 
 Forced choice (no tie), answer buttons unlock after both videos played once. Defaults: 24 comparisons + 2
 attention checks (real clip forward vs. reversed; Q1 has a right answer) per participant, ~10 minutes.
