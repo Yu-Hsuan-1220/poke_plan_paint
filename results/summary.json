@@ -1,0 +1,226 @@
+{
+ "p1": {
+  "Vanilla Wan2.2 (no fine-tune)": {
+   "EPE": 32.6557789322208,
+   "Mean_MSE": 216.06920150623603,
+   "subject_consistency": 0.9551284627180875,
+   "background_consistency": 0.9659343046300551,
+   "temporal_flickering": 0.9836448208786623,
+   "motion_smoothness": 0.9902866061856479,
+   "dynamic_degree": 0.47058823529411764,
+   "aesthetic_quality": 0.502409461666556,
+   "imaging_quality": 65.8352190431966,
+   "i2v_subject": 0.9782435590866954,
+   "i2v_background": 0.982915503163274
+  },
+  "B0: fine-tune, no motion": {
+   "EPE": 24.891311389558457,
+   "Mean_MSE": 184.43613712401952,
+   "subject_consistency": 0.9634349783882499,
+   "background_consistency": 0.9710497575647691,
+   "temporal_flickering": 0.9887371920315587,
+   "motion_smoothness": 0.9931386387657288,
+   "dynamic_degree": 0.3235294117647059,
+   "aesthetic_quality": 0.5119327219093547,
+   "imaging_quality": 65.49147707002736,
+   "i2v_subject": 0.9831473948543563,
+   "i2v_background": 0.9861462901264211
+  },
+  "B1: raw poke as straight line": {
+   "EPE": 23.94193519980592,
+   "Mean_MSE": 165.02330622602912,
+   "subject_consistency": 0.933735742683947,
+   "background_consistency": 0.9498914830824908,
+   "temporal_flickering": 0.9834346953285331,
+   "motion_smoothness": 0.989870006243999,
+   "dynamic_degree": 0.6764705882352942,
+   "aesthetic_quality": 0.48862217585830126,
+   "imaging_quality": 64.94390499839955,
+   "i2v_subject": 0.9588405241053003,
+   "i2v_background": 0.9654049126266995
+  },
+  "Main: hybrid + ZipMo planner": {
+   "EPE": 8.887288296595216,
+   "Mean_MSE": 72.19856491421952,
+   "subject_consistency": 0.9419032009883428,
+   "background_consistency": 0.9602910210104549,
+   "temporal_flickering": 0.9870201602629725,
+   "motion_smoothness": 0.991327854537654,
+   "dynamic_degree": 0.4264705882352941,
+   "aesthetic_quality": 0.4956260503214948,
+   "imaging_quality": 64.78538879290966,
+   "i2v_subject": 0.9662725034717691,
+   "i2v_background": 0.9705479954656981
+  },
+  "zlat: z as cross-attn tokens, planner": {
+   "EPE": 26.593083947896957,
+   "Mean_MSE": 413.31183232104075,
+   "subject_consistency": 0.9542086558991715,
+   "background_consistency": 0.9631949032054228,
+   "temporal_flickering": 0.9852277649624538,
+   "motion_smoothness": 0.9911667854712893,
+   "dynamic_degree": 0.5588235294117647,
+   "aesthetic_quality": 0.5009327986661125,
+   "imaging_quality": 64.99926900906799,
+   "i2v_subject": 0.9755292190142962,
+   "i2v_background": 0.9804925082360996
+  },
+  "Main, oracle z (upper bound)": {
+   "EPE": 7.3599345412324455,
+   "Mean_MSE": 35.115148377440434,
+   "subject_consistency": 0.9345767320157714,
+   "background_consistency": 0.9535406617557302,
+   "temporal_flickering": 0.9802154358626787,
+   "motion_smoothness": 0.9876905048114027,
+   "dynamic_degree": 0.5147058823529411,
+   "aesthetic_quality": 0.49363186429528627,
+   "imaging_quality": 64.32687668649321,
+   "i2v_subject": 0.960537406394895,
+   "i2v_background": 0.9682656016207628
+  },
+  "zlat, oracle z (upper bound)": {
+   "EPE": 26.21059512138805,
+   "Mean_MSE": 395.03924535784654,
+   "subject_consistency": 0.9517764470553683,
+   "background_consistency": 0.9633629742790671,
+   "temporal_flickering": 0.9852130424089497,
+   "motion_smoothness": 0.9910998867298417,
+   "dynamic_degree": 0.6323529411764706,
+   "aesthetic_quality": 0.5012092432555031,
+   "imaging_quality": 64.88925448327042,
+   "i2v_subject": 0.973918776635957,
+   "i2v_background": 0.9788049275877284
+  },
+  "Static video (first frame repeated)": {
+   "EPE": 19.562300894628553,
+   "Mean_MSE": 85.54742303108523
+  },
+  "ZipMo planner tracks alone (no video)": {
+   "EPE": 0.990736299468314,
+   "Mean_MSE": 60.29064504429698
+  },
+  "Real video (GT)": {
+   "subject_consistency": 0.9626528376262949,
+   "background_consistency": 0.9737332840037057,
+   "temporal_flickering": 0.9883727065797774,
+   "motion_smoothness": 0.9929064925408976,
+   "dynamic_degree": 0.38235294117647056,
+   "aesthetic_quality": 0.5211869180202484,
+   "imaging_quality": 65.43736367672682,
+   "i2v_subject": 0.9815445713302334,
+   "i2v_background": 0.9853977012450621
+  }
+ },
+ "p4": {
+  "Vanilla Wan2.2 (no fine-tune)": {
+   "EPE": 28.69737931910683,
+   "Mean_MSE": 216.06920150623603,
+   "subject_consistency": 0.9551284627180875,
+   "background_consistency": 0.9659343046300551,
+   "temporal_flickering": 0.9836448208786623,
+   "motion_smoothness": 0.9902866061856479,
+   "dynamic_degree": 0.47058823529411764,
+   "aesthetic_quality": 0.502409461666556,
+   "imaging_quality": 65.8352190431966,
+   "i2v_subject": 0.9782435590866954,
+   "i2v_background": 0.982915503163274
+  },
+  "B0: fine-tune, no motion": {
+   "EPE": 22.40609577517299,
+   "Mean_MSE": 184.43613712401952,
+   "subject_consistency": 0.9634349783882499,
+   "background_consistency": 0.9710497575647691,
+   "temporal_flickering": 0.9887371920315587,
+   "motion_smoothness": 0.9931386387657288,
+   "dynamic_degree": 0.3235294117647059,
+   "aesthetic_quality": 0.5119327219093547,
+   "imaging_quality": 65.49147707002736,
+   "i2v_subject": 0.9831473948543563,
+   "i2v_background": 0.9861462901264211
+  },
+  "B1: raw poke as straight line": {
+   "EPE": 18.90521341562271,
+   "Mean_MSE": 156.7213885757853,
+   "subject_consistency": 0.9365680274546749,
+   "background_consistency": 0.949427604675293,
+   "temporal_flickering": 0.983665705304657,
+   "motion_smoothness": 0.9899124210039406,
+   "dynamic_degree": 0.6617647058823529,
+   "aesthetic_quality": 0.48959900745574164,
+   "imaging_quality": 64.42420425328734,
+   "i2v_subject": 0.9612919968826809,
+   "i2v_background": 0.9659307013621884
+  },
+  "Main: hybrid + ZipMo planner": {
+   "EPE": 8.792616806486073,
+   "Mean_MSE": 94.15850819871925,
+   "subject_consistency": 0.9314369886688998,
+   "background_consistency": 0.953673755421358,
+   "temporal_flickering": 0.9823964352804346,
+   "motion_smoothness": 0.9878985475146372,
+   "dynamic_degree": 0.5441176470588235,
+   "aesthetic_quality": 0.49509309539023566,
+   "imaging_quality": 65.3949934596929,
+   "i2v_subject": 0.9561964193174125,
+   "i2v_background": 0.9667320879189956
+  },
+  "zlat: z as cross-attn tokens, planner": {
+   "EPE": 21.886175451909793,
+   "Mean_MSE": 405.55133619115634,
+   "subject_consistency": 0.9554219327127451,
+   "background_consistency": 0.964380095986759,
+   "temporal_flickering": 0.9854185636549535,
+   "motion_smoothness": 0.9912374831877595,
+   "dynamic_degree": 0.5441176470588235,
+   "aesthetic_quality": 0.5039142286952805,
+   "imaging_quality": 65.01527545808128,
+   "i2v_subject": 0.9764580715748975,
+   "i2v_background": 0.9816879607257708
+  },
+  "Main, oracle z (upper bound)": {
+   "EPE": 6.9147077522733635,
+   "Mean_MSE": 35.115148377440434,
+   "subject_consistency": 0.9345767320157714,
+   "background_consistency": 0.9535406617557302,
+   "temporal_flickering": 0.9802154358626787,
+   "motion_smoothness": 0.9876905048114027,
+   "dynamic_degree": 0.5147058823529411,
+   "aesthetic_quality": 0.49363186429528627,
+   "imaging_quality": 64.32687668649321,
+   "i2v_subject": 0.960537406394895,
+   "i2v_background": 0.9682656016207628
+  },
+  "zlat, oracle z (upper bound)": {
+   "EPE": 21.066456419580124,
+   "Mean_MSE": 395.03924535784654,
+   "subject_consistency": 0.9517764470553683,
+   "background_consistency": 0.9633629742790671,
+   "temporal_flickering": 0.9852130424089497,
+   "motion_smoothness": 0.9910998867298417,
+   "dynamic_degree": 0.6323529411764706,
+   "aesthetic_quality": 0.5012092432555031,
+   "imaging_quality": 64.88925448327042,
+   "i2v_subject": 0.973918776635957,
+   "i2v_background": 0.9788049275877284
+  },
+  "Static video (first frame repeated)": {
+   "EPE": 16.303838913493298,
+   "Mean_MSE": 85.54742303108523
+  },
+  "ZipMo planner tracks alone (no video)": {
+   "EPE": 0.6010085287339547,
+   "Mean_MSE": 56.27941745037542
+  },
+  "Real video (GT)": {
+   "subject_consistency": 0.9626528376262949,
+   "background_consistency": 0.9737332840037057,
+   "temporal_flickering": 0.9883727065797774,
+   "motion_smoothness": 0.9929064925408976,
+   "dynamic_degree": 0.38235294117647056,
+   "aesthetic_quality": 0.5211869180202484,
+   "imaging_quality": 65.43736367672682,
+   "i2v_subject": 0.9815445713302334,
+   "i2v_background": 0.9853977012450621
+  }
+ }
+}

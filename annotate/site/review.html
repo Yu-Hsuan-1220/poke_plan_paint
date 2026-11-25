@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>所有標註</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="bar-inner">
+    <span class="brand">所有標註</span>
+    <span id="prog" class="muted small"></span>
+    <span class="bar-right"><a href="./">← 回去標註</a></span>
+  </div>
+</header>
+<main class="wrap">
+  <p id="need-key" class="card narrow" hidden>請先到 <a href="./">標註頁</a> 輸入名字和團隊密碼。</p>
+  <div class="row wrap-row" id="tools" hidden>
+    <label class="tg">標註者 <select id="f-who"><option value="">全部</option></select></label>
+    <label class="tg">poke 數 <select id="f-n"><option value="">全部</option><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+    <label class="tg"><input type="checkbox" id="f-skip"> 顯示被跳過的</label>
+    <button id="export" class="ghost">下載 JSON</button>
+    <span id="count" class="muted small"></span>
+  </div>
+  <div id="grid" class="grid"></div>
+</main>
+<script src="pokes.js"></script>
+<script src="common.js"></script>
+<script src="review.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>問卷結果</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar"><div class="bar-inner"><span class="brand">問卷結果（admin）</span><span id="updated" class="muted small"></span></div></header>
+<main class="wrap">
+  <section id="login" class="card">
+    <h2>輸入 admin token</h2>
+    <form class="login" id="login-form">
+      <input id="token" type="password" autocomplete="off" placeholder="token" required>
+      <button class="primary">進入</button>
+    </form>
+    <p id="login-err" class="small" style="color:var(--bad)"></p>
+  </section>
+
+  <section id="results" hidden>
+    <div class="row">
+      <label class="toggle"><input type="checkbox" id="exclude"> 排除沒通過注意力檢查的人</label>
+      <button id="refresh" class="ghost">重新整理</button>
+      <button id="csv" class="ghost">下載 CSV（全部作答）</button>
+      <button id="logout" class="ghost">登出</button>
+    </div>
+
+    <div class="tiles" id="tiles"></div>
+
+    <div class="card">
+      <h2 id="by-title">main 的勝率</h2>
+      <p class="muted small">每一列是 main 對上一個方法的所有比較。勝率 = 選 main 的比例；條狀圖是 95% Wilson 信賴區間，中線是 50%。p 值是對 50% 的雙尾精確二項檢定，<span class="sig">綠色</span> = main 顯著較好，<span class="sig neg">紅色</span> = main 顯著較差（p &lt; 0.05）。同一個人的多題作答彼此相關，正式報告請用 CSV 做以人為單位的分析。</p>
+      <div class="table-wrap"><table id="by-table"></table></div>
+    </div>
+
+    <div class="card">
+      <h2>受試者</h2>
+      <div class="table-wrap"><table id="people-table"></table></div>
+    </div>
+  </section>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>

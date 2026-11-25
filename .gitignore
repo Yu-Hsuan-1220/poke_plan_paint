@@ -1,0 +1,18 @@
+# data & outputs (large / YouTube-derived, never commit)
+data/
+outputs/
+logs/
+*.zip
+*.pt
+*.mp4
+*.npy
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+envs/
+
+# user study: generated media, private manifest / answers / token
+userstudy/site/media/
+userstudy/data/
+annotate/site/img/
+results/vbench/smoke_*

@@ -1,0 +1,16 @@
+accelerate==1.12.0
+av==17.1.0
+decord==0.6.0
+diffusers @ git+https://github.com/huggingface/diffusers@f6b6a7181eb44f0120b29cd897c129275f366c2a
+einops==0.8.2
+huggingface-hub==0.36.0
+ImageIO==2.37.2
+jaxtyping==0.3.7
+numpy==2.2.6
+opencv-contrib-python-headless==5.0.0.93
+peft==0.18.0
+safetensors==0.7.0
+torch==2.9.1
+torchvision==0.24.1
+transformers==4.57.3
+wandb==0.31.0

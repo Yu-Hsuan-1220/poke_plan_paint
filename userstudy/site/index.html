@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>影片評估問卷</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="bar-inner">
+    <span class="brand">影片評估問卷</span>
+    <span id="progress-text" class="muted"></span>
+  </div>
+  <div class="progress"><div id="progress-fill"></div></div>
+</header>
+
+<main class="wrap">
+  <!-- intro -->
+  <section id="intro" class="screen" hidden>
+    <h1>幫我們看看哪部影片比較好</h1>
+    <p>這是一個課堂專題的問卷。我們用不同方法，從同一張圖片和一組「動作指示」生成短影片，想請你比較這些影片。全程大約 <b>10 分鐘</b>，完全匿名，不會收集任何個人資料。</p>
+
+    <div class="card">
+      <h2>每一題你會看到</h2>
+      <ol class="steps">
+        <li><b>輸入圖片</b>：影片的第一幀，上面畫有幾個彩色<b>箭頭</b>。每個箭頭的意思是：<em>起點（圓點）上的東西，應該在影片中移動到箭頭尖端的位置。</em></li>
+        <li><b>兩部影片 A、B</b>：由不同方法生成，會同時播放並自動重複。左右順序是隨機的。</li>
+        <li><b>兩個問題</b>：
+          <ul>
+            <li><b>動作</b>：哪一部影片的運動比較符合箭頭的指示？</li>
+            <li><b>真實感</b>：先不管箭頭，哪一部影片看起來比較像真實拍攝的影片？</li>
+          </ul>
+        </li>
+      </ol>
+      <p class="muted">兩部影片都至少完整播放一次後才能作答。就算很難分辨，也請憑第一印象選一部。兩題請分開判斷：動作比較對的影片，不一定比較真實。</p>
+    </div>
+
+    <p class="muted small">建議使用電腦或平板，畫面比較大、比較好比較。中途關掉網頁沒關係，下次打開會從原本的題目繼續。</p>
+    <button id="start" class="primary big">開始</button>
+  </section>
+
+  <!-- trial -->
+  <section id="trial" class="screen" hidden>
+    <div class="input-row">
+      <figure class="input-fig">
+        <div class="media-box">
+          <img id="input-img" alt="輸入的第一幀">
+          <svg class="pokes" id="input-pokes" viewBox="0 0 576 320" preserveAspectRatio="none" aria-hidden="true"></svg>
+        </div>
+        <figcaption>輸入圖片與動作指示：圓點上的東西應該沿箭頭移動到尖端。</figcaption>
+      </figure>
+    </div>
+
+    <div class="videos">
+      <figure class="vid">
+        <div class="vid-label">影片 A</div>
+        <div class="media-box">
+          <video id="vA" muted playsinline preload="auto"></video>
+          <svg class="pokes overlay" viewBox="0 0 576 320" preserveAspectRatio="none" aria-hidden="true"></svg>
+        </div>
+      </figure>
+      <figure class="vid">
+        <div class="vid-label">影片 B</div>
+        <div class="media-box">
+          <video id="vB" muted playsinline preload="auto"></video>
+          <svg class="pokes overlay" viewBox="0 0 576 320" preserveAspectRatio="none" aria-hidden="true"></svg>
+        </div>
+      </figure>
+    </div>
+
+    <div class="controls">
+      <button id="replay" class="ghost">⟲ 從頭重播</button>
+      <label class="toggle"><input type="checkbox" id="overlay-toggle"> 在影片上也顯示箭頭</label>
+      <span id="watch-hint" class="muted small"></span>
+    </div>
+
+    <div class="questions">
+      <div class="q" data-q="q1">
+        <div class="q-title"><span class="q-tag">動作</span>哪一部影片的運動比較符合箭頭的指示？</div>
+        <div class="q-hint">看圓點上的東西有沒有往箭頭方向移動，最後是否停在箭頭尖端附近。</div>
+        <div class="choices">
+          <button class="choice" data-v="A" disabled>影片 A</button>
+          <button class="choice" data-v="B" disabled>影片 B</button>
+        </div>
+      </div>
+      <div class="q" data-q="q2">
+        <div class="q-title"><span class="q-tag">真實感</span>先不管箭頭，哪一部影片看起來比較像真實拍攝的影片？</div>
+        <div class="q-hint">注意物體有沒有變形、融化、憑空出現或消失，有沒有殘影、閃爍，動作是否自然。</div>
+        <div class="choices">
+          <button class="choice" data-v="A" disabled>影片 A</button>
+          <button class="choice" data-v="B" disabled>影片 B</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="next-row">
+      <span id="save-status" class="muted small"></span>
+      <button id="next" class="primary" disabled>下一題 →</button>
+    </div>
+  </section>
+
+  <!-- done -->
+  <section id="done" class="screen" hidden>
+    <h1>完成了，謝謝你！</h1>
+    <div id="feedback" class="card">
+      <p>最後兩個選填問題：</p>
+      <fieldset class="radios">
+        <legend>你對 AI 生成影片熟悉嗎？</legend>
+        <label><input type="radio" name="familiar" value="no"> 不熟悉</label>
+        <label><input type="radio" name="familiar" value="some"> 看過一些</label>
+        <label><input type="radio" name="familiar" value="yes"> 很熟悉 / 有在做相關研究</label>
+      </fieldset>
+      <label class="block">有什麼想說的嗎？（例如哪裡難判斷）
+        <textarea id="comment" rows="3" maxlength="2000"></textarea>
+      </label>
+      <button id="send-feedback" class="primary">送出</button>
+    </div>
+    <p id="feedback-thanks" class="muted" hidden>已收到，可以關閉這個網頁了。</p>
+  </section>
+
+  <section id="error" class="screen" hidden>
+    <h1>連線出了點問題</h1>
+    <p id="error-text" class="muted"></p>
+    <button onclick="location.reload()" class="primary">重新載入</button>
+  </section>
+</main>
+
+<script src="pokes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
